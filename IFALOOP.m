@@ -2,7 +2,7 @@
 start= 700;
 stop = 900;
 nums = 30;
-meshsize =  1.2e-3;
+meshsize =  5.2e-3;
 param= "L3";
 %%
 t = datestr(now,'yyyy_mm_ddTHH-MM-SS');
