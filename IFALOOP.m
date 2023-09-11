@@ -15,7 +15,7 @@ stopW1 = 63;
 numsW1 = 7;
 varW1 = linspace(startW1,stopW1,numsW1);
 
-meshsize =  1.2e-3;
+meshsize =  5.2e-3;
 param= "L6,L3,W2";
 %%
 t = datestr(now,'yyyy_mm_ddTHH-MM-SS');
