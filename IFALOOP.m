@@ -7,12 +7,12 @@ varL6 = linspace(startL6,stopL6,numsL6);
 
 startL3 = 790;
 stopL3 = 810;
-numsL3 = 7;
+numsL3 = 10;
 varL3 = linspace(startL3,stopL3,numsL3);
 
 startW1 =57;
 stopW1 = 63;
-numsW1 = 10;
+numsW1 = 7;
 varW1 = linspace(startW1,stopW1,numsW1);
 
 meshsize =  1.2e-3;
