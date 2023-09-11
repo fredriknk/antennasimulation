@@ -7,10 +7,10 @@
 #SBATCH --time=64:00:00
 #
 ####Partition
-#SBATCH -w cn-14
+#SBATCH -w cn-2
 ## Other parameters:
 #SBATCH --cpus-per-task 20 #Number of cpus the job will use
-#SBATCH --mem=24G             #Memory RAM
+#SBATCH --mem=32G             #Memory RAM
 #SBATCH --nodes 1
 #SBATCH --mail-user=fredrik.beilegaard@nmbu.no  #User email
 #SBATCH --mail-type=begin      #notify by email when job starts
