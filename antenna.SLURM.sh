@@ -27,7 +27,7 @@ date
 
 module purge
 module load MATLAB/2019b
-matlab -nodisplay -nosplash -nodesktop -r LOOPTEST, exit
+matlab -nodisplay -nosplash -nodesktop -r IFALOOP, exit
 
 echo "Ending $SLURM_JOB_ID at"
 date
