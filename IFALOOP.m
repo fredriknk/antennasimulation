@@ -17,7 +17,7 @@ varW1 = linspace(startW1,stopW1,numsW1);
 
 meshsize =  5.2e-3;
 param= "L6,L3,W2";
-cat 
+
 t = datestr(now,'yyyy_mm_ddTHH-MM-SS');
 filename = sprintf("results_%s.txt",t);
 
