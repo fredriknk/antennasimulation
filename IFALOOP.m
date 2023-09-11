@@ -115,7 +115,7 @@ function IFALOOP(startL3, stopL3, numsL3,startL6, stopL6, numsL6,startW1, stopW1
                 impedans = imp;
                 dbi = 20*log10(abs(spar.Parameters));
             
-                str = sprintf("L3;%.3f;L6;%.3f;W1;%.3f;DB;%.3f;IMP;%.5f\n", varL3(k),varL6(j),varW1(i),dbi,impedans);
+                str = sprintf("L3;%.3f;L6;%.3f;W1;%.3f;DB;%.3f;IMP;%.5f\n", L3,L6,W1,dbi,impedans);
     
                 fileID = fopen(filename,'a');
                 fprintf(fileID,str);
