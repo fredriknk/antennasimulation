@@ -9,7 +9,7 @@
 #SBATCH -w cn-1
 ## Other parameters:
 #SBATCH --cpus-per-task 12 #Number of cpus the job will use
-#SBATCH --mem=12G             #Memory RAM
+#SBATCH --mem=9G             #Memory RAM
 #SBATCH --nodes 1
 #SBATCH -o slurm-%x_%j.out    #Standar output message
 #SBATCH -e slurm-%x_%j.err    #Standar error message
