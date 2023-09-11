@@ -9,7 +9,7 @@
 ####Partition
 #SBATCH -w cn-1
 ## Other parameters:
-#SBATCH --cpus-per-task 20 #Number of cpus the job will use
+#SBATCH --cpus-per-task 10 #Number of cpus the job will use
 #SBATCH --mem=32G             #Memory RAM
 #SBATCH --nodes 1
 #SBATCH --mail-user=fredrik.beilegaard@nmbu.no  #User email
