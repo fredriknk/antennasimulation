@@ -27,7 +27,6 @@ fileID = fopen(filename,'a');
 fprintf(fileID,str+"\n");
 fclose(fileID);
 disp(str);
-varnum = linspace(start,stop,nums);
 
 %%
 str_arr = [""];
@@ -133,8 +132,8 @@ for i = 1:numsW1
             fprintf(fileID,str);
             fclose(fileID);
             toc
-            end
         end
+    end
 end
 
 
