@@ -15,7 +15,7 @@ stopW1 = 63;
 numsW1 = 7;
 varW1 = linspace(startW1,stopW1,numsW1);
 
-meshsize =  5.2e-3;
+meshsize =  1.2e-3;
 param= "L6,L3,W2";
 
 t = datestr(now,'yyyy_mm_ddTHH-MM-SS');
@@ -107,9 +107,8 @@ for i = 1:numsW1
             ant.FeedLocations  = [W1+D5+W2/2,-L7+W2/4,1,3];
             ant.ViaLocations   = [W1/2,-W1/4,1,3];
             ant.FeedViaModel   = 'square';
-            ant.Conductor.Conductivity      = 59600000;
-            ant.Conductor.Thickness = 35e-6;
-            
+            %ant.Conductor.Conductivity      = 59600000;
+            %ant.Conductor.Thickness = 35e-6;
             freqs = 2.45e9;%linspace(minf,maxf,points)
             
             msh = mesh(ant,'MaxEdgeLength', meshsize);
