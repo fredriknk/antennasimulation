@@ -1,6 +1,6 @@
 parpool('local',10);
 
-startL6= 170
+startL6= 170;
 stopL6 = 190;
 numsL6 = 7;
 varL6 = linspace(startL6,stopL6,numsL6);
@@ -17,13 +17,11 @@ varW1 = linspace(startW1,stopW1,numsW1);
 
 meshsize =  5.2e-3;
 param= "L6,L3,W2";
-%%
+cat 
 t = datestr(now,'yyyy_mm_ddTHH-MM-SS');
 filename = sprintf("results_%s.txt",t);
 
-%%
-
-str = sprintf("Tuning %s, from %d to %d in %d steps, Meshsize is %.6f m",param,start,stop,nums,meshsize);
+str = sprintf("Tuning %s, Meshsize is %.6f m",param,meshsize);
 
 fileID = fopen(filename,'a');
 fprintf(fileID,str+"\n");
