@@ -9,8 +9,8 @@
 ####Partition
 #SBATCH -w cn-1
 ## Other parameters:
-#SBATCH --cpus-per-task 34 #Number of cpus the job will use
-#SBATCH --mem=32G             #Memory RAM
+#SBATCH --cpus-per-task 10 #Number of cpus the job will use
+#SBATCH --mem=12G             #Memory RAM
 #SBATCH --nodes 1
 #SBATCH -o slurm-%x_%j.out    #Standar output message
 #SBATCH -e slurm-%x_%j.err    #Standar error message
@@ -25,7 +25,7 @@ date
 module purge
 module load MATLAB/2019b
 
-startL3 = 867
+startL3 = 767
 stopL3 = 800
 numsL3 = 10
 
