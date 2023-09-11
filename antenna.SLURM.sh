@@ -4,12 +4,12 @@
 #SBATCH --job-name=Antenna_test  #Name of the job
 #
 ## Wall time limit:
-#SBATCH --time=24:00:00
+#SBATCH --time=64:00:00
 #
 ####Partition
-#SBATCH -w cn-1
+#SBATCH -w cn-14
 ## Other parameters:
-#SBATCH --cpus-per-task 10 #Number of cpus the job will use
+#SBATCH --cpus-per-task 20 #Number of cpus the job will use
 #SBATCH --mem=32G             #Memory RAM
 #SBATCH --nodes 1
 #SBATCH --mail-user=fredrik.beilegaard@nmbu.no  #User email

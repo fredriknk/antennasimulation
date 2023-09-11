@@ -1,4 +1,4 @@
-%parpool('local',10);
+parpool('local',10);
 
 startL6= 170;
 stopL6 = 190;
@@ -107,8 +107,8 @@ for i = 1:numsW1
             ant.FeedLocations  = [W1+D5+W2/2,-L7+W2/4,1,3];
             ant.ViaLocations   = [W1/2,-W1/4,1,3];
             ant.FeedViaModel   = 'square';
-            %ant.Conductor.Conductivity      = 59600000;
-            %ant.Conductor.Thickness = 35e-6;
+            ant.Conductor.Conductivity      = 59600000;
+            ant.Conductor.Thickness = 35e-6;
             freqs = 2.45e9;%linspace(minf,maxf,points)
             
             msh = mesh(ant,'MaxEdgeLength', meshsize);
