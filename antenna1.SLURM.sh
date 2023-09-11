@@ -38,7 +38,7 @@ set stopW1 = 70
 set numsW1 = 10
 set meshsize =  0.0012
 
-matlab -nodisplay -nosplash -nodesktop -r IFALOOP($startL3, $stopL3, $numsL3,$startL6, $stopL6, $numsL6,$startW1, $stopW1, $numsW1, $meshsize), exit
+matlab -nodisplay -nosplash -nodesktop -r "IFALOOP($startL3, $stopL3, $numsL3,$startL6, $stopL6, $numsL6,$startW1, $stopW1, $numsW1, $meshsize)", exit
 
 echo "Ending $SLURM_JOB_ID at"
 date
