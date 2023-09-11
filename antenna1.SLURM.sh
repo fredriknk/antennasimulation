@@ -25,18 +25,18 @@ date
 module purge
 module load MATLAB/2019b
 
-set startL3 = 700
-set stopL3 = 733
-set numsL3 = 10
+startL3=700
+stopL3=733
+numsL3=10
 
-set startL6= 170
-set stopL6 = 190
-set numsL6 = 10
+startL6=170
+stopL6=190
+numsL6=10
 
-set startW1 =50
-set stopW1 = 70
-set numsW1 = 10
-set meshsize =  0.0012
+startW1=50
+stopW1=70
+numsW1=10
+meshsize=0.0012
 
 matlab -nodisplay -nosplash -nodesktop -r "IFALOOP($startL3, $stopL3, $numsL3,$startL6, $stopL6, $numsL6,$startW1, $stopW1, $numsW1, $meshsize)"
 echo "Ending $SLURM_JOB_ID at"
