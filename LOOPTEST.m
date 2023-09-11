@@ -1,4 +1,4 @@
-parpool('local',4);
+parpool('local',10);
 tic
 start = tic;
 clear A
