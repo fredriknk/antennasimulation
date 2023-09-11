@@ -1,4 +1,4 @@
-parpool('local',10);
+%parpool('local',10);
 
 startL6= 170;
 stopL6 = 190;
