@@ -1,7 +1,4 @@
-parpool('threads');
-%Setting the number of workers is not supported when creating thread-based parallel pools. To do so, you need to use the ‘local’ pool.
-
-%parpool('local',4);
+parpool('local',10);
 
 startL6= 170
 stopL6 = 190;
@@ -144,4 +141,4 @@ end
 
 
 delete(gcp('nocreate'));
-%matlabpool('close');
+parpool('close');
