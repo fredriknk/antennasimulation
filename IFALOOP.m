@@ -1,5 +1,3 @@
-%parpool('local',5);
-
 function IFALOOP(startL3, stopL3, numsL3,startL6, stopL6, numsL6,startW1, stopW1, numsW1, meshsize)
     
     % startL3 = 700;
@@ -129,4 +127,5 @@ function IFALOOP(startL3, stopL3, numsL3,startL6, stopL6, numsL6,startW1, stopW1
             end
         end
     end
+    exit;
 end
