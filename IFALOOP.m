@@ -1,18 +1,18 @@
-parpool('local',5);
+%parpool('local',5);
 
 startL6= 170;
 stopL6 = 190;
-numsL6 = 7;
+numsL6 = 10;
 varL6 = linspace(startL6,stopL6,numsL6);
 
-startL3 = 790;
-stopL3 = 810;
+startL3 = 700;
+stopL3 = 900;
 numsL3 = 10;
 varL3 = linspace(startL3,stopL3,numsL3);
 
-startW1 =57;
-stopW1 = 63;
-numsW1 = 7;
+startW1 =50;
+stopW1 = 70;
+numsW1 = 10;
 varW1 = linspace(startW1,stopW1,numsW1);
 
 meshsize =  1.2e-3;
@@ -23,9 +23,9 @@ filename = sprintf("results_%s.txt",t);
 
 str = sprintf("Tuning %s, Meshsize is %.6f m",param,meshsize);
 
-% fileID = fopen(filename,'a');
-% fprintf(fileID,str+"\n");
-% fclose(fileID);
+fileID = fopen(filename,'a');
+fprintf(fileID,str+"\n");
+fclose(fileID);
 disp(str);
 
 %%
@@ -37,8 +37,8 @@ db_array = [];
 
 for i = 1:numsW1
     for j = 1:numsL6
-        parfor k = 1:numsL3
-            % tic   
+        for k = 1:numsL3
+            tic   
             m = 2.54e-5;
             W1 = varW1(i)*m;
             L6 = varL6(j)*m;
@@ -115,11 +115,18 @@ for i = 1:numsW1
             dbi = 20*log10(abs(spar.Parameters));
         
             str = sprintf("L3;%.3f;L6;%.3f;W1;%.3f;DB;%.3f;IMP;%.5f\n", varL3(k),varL6(j),varW1(i),dbi,impedans);
+
+            fileID = fopen(filename,'a');
+            fprintf(fileID,str);
+            fclose(fileID);
+            
             disp(str);
+            
+            toc
         end
     end
 end
 
 
-delete(gcp('nocreate'));
-parpool('close');
+%delete(gcp('nocreate'));
+%parpool('close');
