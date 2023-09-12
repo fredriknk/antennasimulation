@@ -27,18 +27,15 @@ module load MATLAB/2019b
 BstartL3=$1
 BstopL3=$2
 BnumsL3=$3
-
 BstartL6=$4
 BstopL6=$5
 BnumsL6=$6
-
 BstartW1=$7
 BstopW1=$8
 BnumsW1=$9
-
-BstartD5=$10
-BstopD5=$11
-BnumsD5=$12
+BstartD5=${10}
+BstopD5=${11}
+BnumsD5=${12}
 
 echo params = $BstartL3, $BstopL3, $BnumsL3, $BstartL6, $BstopL6, $BnumsL6, $BstartW1, $BstopW1, $BnumsW1, $BstartD5, $BstopD5, $BnumsD5
 
