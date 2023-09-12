@@ -15,5 +15,5 @@ stopD5=50
 numsD5=10
 
 
-sbatch antenna.SLURM.sh $startL3 $stopL3 $numsL3 $startL6 $stopL6 $numsL6 $startW1 $stopW1 $numsW1 20 30 $numsD5
-sbatch antenna.SLURM.sh $startL3 $stopL3 $numsL3 $startL6 $stopL6 $numsL6 $startW1 $stopW1 $numsW1 31 40 $numsD5
+sbatch antenna.SLURM.sh $startL3 $stopL3 $numsL3 $startL6 $stopL6 $numsL6 $startW1 $stopW1 $numsW1 16 25 $numsD5
+sbatch antenna.SLURM.sh $startL3 $stopL3 $numsL3 $startL6 $stopL6 $numsL6 $startW1 $stopW1 $numsW1 26 35 $numsD5
