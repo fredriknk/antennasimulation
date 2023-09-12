@@ -15,11 +15,11 @@ stopW1 = 70;
 numsW1 = 3;
 varW1 = linspace(startW1,stopW1,numsW1);
 
-meshsize =  1.2e-3;
+meshsize =  5.2e-3;
 param= "L6,L3,W2";
 
 t = datestr(now,'yyyy_mm_ddTHH-MM-SS');
-filename = sprintf("results_%s.txt",t);
+filename = sprintf("data/results_%s_meshsize-%.3f_L3-%.0f-%.0f-%.0f_L6-%.0f-%.1f-%1f_W1-%.1f-%.1f-%.1f.txt",t,meshsize,startL3,stopL3,varL3,startL6,stopL6,varL6,startW1,stopW1,varW1);
 
 str = sprintf("Tuning %s, Meshsize is %.6f m",param,meshsize);
 
@@ -114,8 +114,7 @@ for i = 1:numsL3
             impedans = imp;
             dbi = 20*log10(abs(spar.Parameters));
             
-            
-            str = sprintf("L3;%.3f;L6;%.3f;W1;%.3f;DB;%.3f;IMP;%.5f\n", L3,L6,W1,dbi,impedans);
+            str = sprintf("L3\t%.3f\tL6\t%.3f\tW1\t%.3f\tDB\t%.3f\tIMP\t%.5f\tmeshsize\t%0.3f\n", varL3(i),varL6(j),varW1(k),dbi,impedans,meshsize);
             
             fileID = fopen(filename,'a');
             fprintf(fileID,str);
