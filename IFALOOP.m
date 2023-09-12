@@ -20,7 +20,6 @@ function IFALOOP(startL3, stopL3, numsL3,startL6, stopL6, numsL6,startW1, stopW1
     % numsD5 = 5;
     varD5 = linspace(startD5,stopD5,numsD5);
     
-    meshsize =  1.2e-3;
     param= "L6,L3,W2,D1";
     
     t = datestr(now,'yyyy_mm_ddTHH-MM-SS');
