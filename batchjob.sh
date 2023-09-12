@@ -12,5 +12,7 @@ numsW1=10
 meshsize=0.0012
 
 sbatch antenna.SLURM.sh 700 733 5 $startL6 $stopL6 $numsL6 $startW1 $stopW1 $numsW1 $meshsize
+
 sbatch antenna.SLURM.sh 734 766 5 $startL6 $stopL6 $numsL6 $startW1 $stopW1 $numsW1 $meshsize
+
 sbatch antenna.SLURM.sh 767 800 5 $startL6 $stopL6 $numsL6 $startW1 $stopW1 $numsW1 $meshsize

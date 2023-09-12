@@ -114,8 +114,7 @@ for i = 1:numsL3
             impedans = imp;
             dbi = 20*log10(abs(spar.Parameters));
             
-            
-            str = sprintf("L3;%.3f;L6;%.3f;W1;%.3f;DB;%.3f;IMP;%.5f\n", L3,L6,W1,dbi,impedans);
+            str = sprintf("L3\t%.3f\tL6\t%.3f\tW1\t%.3f\tDB\t%.3f\tIMP\t%.5f\tmeshsize\t%0.3f\n", varL3(i),varL6(j),varW1(k),dbi,impedans,meshsize);
             
             fileID = fopen(filename,'a');
             fprintf(fileID,str);
