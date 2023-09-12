@@ -7,7 +7,7 @@ stopL6=160
 numsL6=1
 
 startW1=20
-stopW1=25
+stopW1=20
 numsW1=1
 
 startD5=20
