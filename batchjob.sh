@@ -4,11 +4,11 @@ numsL3=5
 
 startL6=160
 stopL6=160
-numsL6=5
+numsL6=1
 
 startW1=20
 stopW1=25
-numsW1=5
+numsW1=1
 
 startD5=20
 stopD5=20

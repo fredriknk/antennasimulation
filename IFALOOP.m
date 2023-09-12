@@ -99,8 +99,8 @@ function IFALOOP(startL3, stopL3, numsL3,startL6, stopL6, numsL6,startW1, stopW1
                     ant.FeedLocations  = [W1+D5+W2/2,-W2/4,1,3];
                     ant.ViaLocations   = [W1/2,-W2/4,1,3];
                     ant.FeedViaModel   = 'square';
-                    ant.Conductor      = metal('Copper');
-                    ant.Conductor.Thickness = 35e-6;
+                    %ant.Conductor      = metal('Copper');
+                    %ant.Conductor.Thickness = 35e-6;
         
                     freqs = 2.44e9;%linspace(minf,maxf,points)
                     
