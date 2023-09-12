@@ -1,4 +1,5 @@
-%parpool('local',5);
+function IFALOOP(startL3, stopL3, numsL3,startL6, stopL6, numsL6,startW1, stopW1, numsW1, meshsize)
+ %parpool('local',5);
 
 startL6= 160;
 stopL6 = 160;
@@ -18,14 +19,13 @@ varW1 = linspace(startW1,stopW1,numsW1);
 startD5 = 18;
 stopD5 = 22;
 numsD5 = 5;
+varD5 = linspace(startD5,stopD5,numsD5);
 
-varD1 = linspace(startW1,stopW1,numsW1);
-
-meshsize =  5.2e-3;
-param= "L6,L3,W2";
+meshsize =  1.2e-3;
+param= "L6,L3,W2,D1";
 
 t = datestr(now,'yyyy_mm_ddTHH-MM-SS');
-filename = sprintf("data/results_%s_meshsize-%.0f_L3-%.0f-%.0f-%.0f_L6-%.0f-%.0f-%.0f_W1-%.0f-%.0f-%.0f.txt",t,meshsize*10000,startL3,stopL3,numsL3,startL6,stopL6,numsL6,startW1,stopW1,numsW1);
+filename = sprintf("data/results_%s_meshsize-%.0f_L3-%.0f-%.0f-%.0f_L6-%.0f-%.0f-%.0f_W1-%.0f-%.0f-%.0f_D5-%.0f-%.0f-%.0f.txt",t,meshsize*10000,startL3,stopL3,numsL3,startL6,stopL6,numsL6,startW1,stopW1,numsW1,startD5,stopD5,numsD5);
 
 str = sprintf("Tuning %s, Meshsize is %.6f m",param,meshsize);
 
@@ -35,16 +35,10 @@ fclose(fileID);
 disp(str);
 
 %%
-str_arr = [""];
-var_array = [];
-imp_array = [];
-db_array = [];
-
-
 for i = 1:numsL3
     for j = 1:numsL6
         for k = 1:numsW1
-            for id5 = 
+            for iD5 = 1:numsD5 
                 tic   
                 m = 2.54e-5;
                 W1 = varW1(k)*m;
@@ -60,7 +54,7 @@ for i = 1:numsL3
             
                 W4 = W3+D4*2;
                 
-                D5 = 20*m;
+                D5 = varD5(iD5)*m;
                 
                 
                 D1 = 0.5e-3;
@@ -121,7 +115,7 @@ for i = 1:numsL3
                 impedans = imp;
                 dbi = 20*log10(abs(spar.Parameters));
                 
-                str = sprintf("L3\t%.3f\tL6\t%.3f\tW1\t%.3f\tDB\t%.3f\tIMP\t%.5f\tmeshsize\t%0.3f\n", varL3(i),varL6(j),varW1(k),dbi,impedans,meshsize);
+                str = sprintf("L3\t%.3f\tL6\t%.3f\tW1\t%.3f\tD5\t%.3f\tDB\t%.3f\tIMP\t%.5f\tmeshsize\t%0.3f\n", varL3(i),varL6(j),varW1(k),varD5(iD5),dbi,impedans,meshsize);
                 
                 fileID = fopen(filename,'a');
                 fprintf(fileID,str);
@@ -130,10 +124,10 @@ for i = 1:numsL3
                 disp(str);
                 
                 toc
+            end
         end
     end
 end
 
-
-%delete(gcp('nocreate'));
-%parpool('close');
+    exit;
+end
