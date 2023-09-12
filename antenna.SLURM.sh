@@ -37,6 +37,6 @@ stopW1=$8
 numsW1=$9
 meshsize=$10
 
-matlab -nodisplay -nosplash -nodesktop -r "IFALOOP($startL3, $stopL3, $numsL3, $startL6, $stopL6, $numsL6, $startW1, $stopW1, $numsW1, $meshsize)"
+matlab -nodisplay -nosplash -nodesktop -r "IFALOOP($startL3, $stopL3, $numsL3, $startL6, $stopL6, $numsL6, $startW1, $stopW1, $numsW1, 0.0012)"
 echo "Ending $SLURM_JOB_ID at"
 date
