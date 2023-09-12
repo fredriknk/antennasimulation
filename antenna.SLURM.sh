@@ -11,8 +11,8 @@
 #SBATCH --cpus-per-task 10 #Number of cpus the job will use
 #SBATCH --mem=9G             #Memory RAM
 #SBATCH --nodes 1
-#SBATCH -o slurm-%x_%j.out    #Standar output message
-#SBATCH -e slurm-%x_%j.err    #Standar error message
+#SBATCH -o logs/slurm-%x_%j.out    #Standar output message
+#SBATCH -e logs/slurm-%x_%j.err    #Standar error message
 
 ######Everything below this are the job instructions######
 
@@ -37,6 +37,6 @@ stopW1=$8
 numsW1=$9
 meshsize=$10
 
-matlab -nodisplay -nosplash -nodesktop -r "IFALOOP($startL3, $stopL3, $numsL3,$startL6, $stopL6, $numsL6,$startW1, $stopW1, $numsW1, $meshsize)"
+matlab -nodisplay -nosplash -nodesktop -r "IFALOOP($startL3, $stopL3, $numsL3, $startL6, $stopL6, $numsL6, $startW1, $stopW1, $numsW1, $meshsize)"
 echo "Ending $SLURM_JOB_ID at"
 date

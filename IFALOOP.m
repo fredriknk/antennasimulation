@@ -20,7 +20,7 @@ function IFALOOP(startL3, stopL3, numsL3,startL6, stopL6, numsL6,startW1, stopW1
     param= "L6,L3,W2";
     
     t = datestr(now,'yyyy_mm_ddTHH-MM-SS');
-    filename = sprintf("results_%s.txt",t);
+    filename = sprintf("data/results_%s.txt",t);
     
     str = sprintf("Tuning %s, Meshsize is %.6f m",param,meshsize);
     
