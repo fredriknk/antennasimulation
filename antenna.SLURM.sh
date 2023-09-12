@@ -41,6 +41,6 @@ stopD5=$11
 numsD5=$12
 
 
-matlab -nodisplay -nosplash -nodesktop -r "IFALOOP($startL3, $stopL3, $numsL3, $startL6, $stopL6, $numsL6, $startW1, $stopW1, $numsW1, 0.0012)"
+matlab -nodisplay -nosplash -nodesktop -r "IFALOOP($startL3, $stopL3, $numsL3, $startL6, $stopL6, $numsL6, $startW1, $stopW1, $numsW1, $startD5, $stopD5, $numsD5, 0.0012)"
 echo "Ending $SLURM_JOB_ID at"
 date
