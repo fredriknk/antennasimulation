@@ -24,24 +24,24 @@ date
 module purge
 module load MATLAB/2019b
 
-startL3=$1
-stopL3=$2
-numsL3=$3
+BstartL3=$1
+BstopL3=$2
+BnumsL3=$3
 
-startL6=$4
-stopL6=$5
-numsL6=$6
+BstartL6=$4
+BstopL6=$5
+BnumsL6=$6
 
-startW1=$7
-stopW1=$8
-numsW1=$9
+BstartW1=$7
+BstopW1=$8
+BnumsW1=$9
 
-startD5=$10
-stopD5=$11
-numsD5=$12
+BstartD5=$10
+BstopD5=$11
+BnumsD5=$12
 
-echo params = $startL3, $stopL3, $numsL3, $startL6, $stopL6, $numsL6, $startW1, $stopW1, $numsW1, $startD5, $stopD5, $numsD5
+echo params = $BstartL3, $BstopL3, $BnumsL3, $BstartL6, $BstopL6, $BnumsL6, $BstartW1, $BstopW1, $BnumsW1, $BstartD5, $BstopD5, $BnumsD5
 
-matlab -nodisplay -nosplash -nodesktop -r "IFALOOP($startL3, $stopL3, $numsL3, $startL6, $stopL6, $numsL6, $startW1, $stopW1, $numsW1, $startD5, $stopD5, $numsD5, 0.0012)"
+matlab -nodisplay -nosplash -nodesktop -r "IFALOOP($BstartL3, $BstopL3, $BnumsL3, $BstartL6, $BstopL6, $BnumsL6, $BstartW1, $BstopW1, $BnumsW1, $BstartD5, $BstopD5, $BnumsD5, 0.0012)"
 echo "Ending $SLURM_JOB_ID at"
 date
