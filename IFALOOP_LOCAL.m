@@ -5,9 +5,9 @@ stopL6 = startL6;
 numsL6 = 1;
 varL6 = linspace(startL6,stopL6,numsL6);
 
-startL3 = 770;
-stopL3 = 790;
-numsL3 = 5;
+startL3 = 768;
+stopL3 = 768;
+numsL3 = 1;
 varL3 = linspace(startL3,stopL3,numsL3);
 
 startW1 =24;
@@ -16,8 +16,8 @@ numsW1 = 1;
 varW1 = linspace(startW1,stopW1,numsW1);
 
 startD5 = 20;
-stopD5 = startD5;
-numsD5 = 1;
+stopD5 = 25;
+numsD5 = 6;
 varD5 = linspace(startD5,stopD5,numsD5);
 
 meshsize =  1.2e-3;
