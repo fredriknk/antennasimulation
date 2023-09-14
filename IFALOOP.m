@@ -43,7 +43,7 @@ function IFALOOP(startL3, stopL3, numsL3,startL6, stopL6, numsL6,startW1, stopW1
                     L6 = varL6(j)*m;
                     L3 = varL3(i)*m;
         
-                    W2 = W1;
+                    W2 = 24*m;
                     
                     
                     L7 = 1e-3;
