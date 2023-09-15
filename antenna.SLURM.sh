@@ -8,7 +8,7 @@
 ####Partition
 #SBATCH -w cn-1
 ## Other parameters:
-#SBATCH --cpus-per-task 20 #Number of cpus the job will use
+#SBATCH --cpus-per-task 14 #Number of cpus the job will use
 #SBATCH --mem=9G             #Memory RAM
 #SBATCH --nodes 1
 #SBATCH -o logs/slurm-%x_%j.out    #Standar output message
