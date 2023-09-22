@@ -62,7 +62,7 @@ function IFALOOP(startL3, stopL3, numsL3,startL6, stopL6, numsL6,startW1, stopW1
                     ED = 4e-4;
                     Lgp = D1+L3+D3; % Length of the Groundplane
                     
-                    Wgp = 75e-3;   % Width of the Groundplane
+                    Wgp = 25e-3;   % Width of the Groundplane
                     
                     LBS = Lgp; % Length for the Board Shape
                     Aheigth = L6+W2+D2;
@@ -70,7 +70,7 @@ function IFALOOP(startL3, stopL3, numsL3,startL6, stopL6, numsL6,startW1, stopW1
                     TH = L6+W2/2;
                     
                     ant_gap = 0.7e-3;
-                    edge = 26e-3 - Lgp;
+                    edge = 75e-3 - Lgp;
                     edge_height = Aheigth-D4;
                     
                     a = antenna.Rectangle('Length',W1,'Width',L6,'Center',[W1/2,L6/2]);
