@@ -20,7 +20,7 @@ function optimizeAntennaMultiVars(varNames, varSettings, goal, optimizeMetric, t
 
     % Optimization options
     %options = optimoptions('fmincon', 'Display', 'iter', 'Algorithm', 'sqp');
-    options = optimoptions('fmincon', 'UseParallel', false, 'Display', 'iter', 'Algorithm', 'sqp');
+    options = optimoptions('fmincon', 'UseParallel', true, 'Display', 'iter', 'Algorithm', 'sqp');
     % Execute the optimization
     [optValues, optMetric] = fmincon(objectiveFunction, initialGuesses, [], [], [], [], lb, ub, [], options);
 
@@ -77,6 +77,3 @@ function metric = calculateMultiPerformanceMetric(x, optVarNames, varSettings, o
         error('Unsupported optimization metric or goal.');
     end
 end
-
-%optimizeAntennaMultiVars({"L3","L6","D5","W1",'W2', 'W3'}, {[10e-3, 20.5e-3],[1e-3, 10e-3],[1e-3, 10e-3],[0.15e-3, 1e-3], [0.15e-3, 1e-3], [0.15e-3, 1e-3]}, 'minimum', 's11',50, 10.2e6)
-%optimizeAntennaMultiVars({"W1",'W2', 'W3'}, {[0.1e-3, 1e-3], [0.1e-3, 1e-3], [0.1e-3, 1e-3]}, 'match', 'impedance', 50, 10.2e6)

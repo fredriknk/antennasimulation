@@ -8,7 +8,7 @@
 ####Partition
 #SBATCH --partition hugemem-avx2
 ## Other parameters:
-#SBATCH --cpus-per-task 24 #Number of cpus the job will use
+#SBATCH --cpus-per-task 96 #Number of cpus the job will use
 #SBATCH --mem=128G #Memory RAM
 #SBATCH --nodes 1
 #SBATCH -o logs/slurm-%x_%j.out    #Standar output message
