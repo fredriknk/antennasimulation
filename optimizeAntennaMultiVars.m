@@ -20,10 +20,10 @@ function optimizeAntennaMultiVars(varNames, varSettings, goal, optimizeMetric, t
 
     % Optimization options
     %options = optimoptions('fmincon', 'Display', 'iter', 'Algorithm', 'sqp');
-    options = optimoptions('fmincon', 'UseParallel', true, 'Display', 'iter', 'Algorithm', 'sqp');
+    options = optimoptions('fmincon', 'UseParallel', false, 'Display', 'iter', 'Algorithm', 'sqp');
     % Execute the optimization
     [optValues, optMetric] = fmincon(objectiveFunction, initialGuesses, [], [], [], [], lb, ub, [], options);
-    
+
     % Print results
     fprintf('Optimized values:\n');
     optVarNames = varNames(optIndices);
@@ -40,7 +40,7 @@ function metric = calculateMultiPerformanceMetric(x, optVarNames, varSettings, o
     % Debug: Print variable names and values to ensure correct mapping
     disp('Optimization Variables and Values:');
     disp(optVarNames);
-    disp(x);
+    disp(x*1000);
 
     % Set optimized variable values
     for i = 1:length(optVarNames)
@@ -56,15 +56,22 @@ function metric = calculateMultiPerformanceMetric(x, optVarNames, varSettings, o
     % Define simulation parameters
     mesh(ant, 'MaxEdgeLength', meshsize);
     freqs = 2.44e9;
+    
+    tic
+    imp = impedance(ant, freqs);
+    spar = sparameters(ant, freqs);
+    s11 = 20 * log10(abs(spar.Parameters(1,1,1)));
+    S11_linear = 10^(s11 / 20);
+    % Calculate VSWR
+    VSWR = (1 + abs(S11_linear)) / (1 - abs(S11_linear));
+    disp({"S11","VSWR","impedance","Rectance"});
+    disp({s11, VSWR, real(imp), imag(imp)});
+    toc
 
     % Select the optimization metric based on user choice
     if strcmp(optimizeMetric, 'impedance') && strcmp(goal, 'match')
-         % Compute impedance and S-parameters
-        imp = impedance(ant, freqs);
         metric = abs(abs(imp) - targetImpedance);  % Difference from target impedance
     elseif strcmp(optimizeMetric, 's11')
-        spar = sparameters(ant, freqs);
-        s11 = 20 * log10(abs(spar.Parameters(1,1,1)));
         metric = s11;  % S11 value directly
     else
         error('Unsupported optimization metric or goal.');
