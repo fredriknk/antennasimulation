@@ -8,8 +8,8 @@
 ####Partition
 #SBATCH --partition smallmem
 ## Other parameters:
-#SBATCH --cpus-per-task 14 #Number of cpus the job will use
-#SBATCH --mem=32G #Memory RAM
+#SBATCH --cpus-per-task 16 #Number of cpus the job will use
+#SBATCH --mem=64G #Memory RAM
 #SBATCH --nodes 1
 #SBATCH -o logs/slurm-%x_%j.out    #Standar output message
 #SBATCH -e logs/slurm-%x_%j.err    #Standar error message
