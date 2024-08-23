@@ -7,7 +7,7 @@
 #
 ####Partition
 ##SBATCH -w cn-1
-#SBATCH -partition hugemem-avx2
+#SBATCH -partition hugemem
 ## Other parameters:
 #SBATCH --cpus-per-task 24 #Number of cpus the job will use
 #SBATCH --mem=128G #Memory RAM
