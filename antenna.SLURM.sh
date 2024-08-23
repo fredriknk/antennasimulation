@@ -30,7 +30,8 @@ module purge
 module load MATLAB/2023b
 echo "Module Loaded"
 echo "Starting Matlab"
-
+matlab -noFigureWindows -nosplash -nodesktop -r "restoredefaultpath;rehash toolboxcache;"
+echo "restored cahce, starting script"
 matlab -noFigureWindows -nosplash -nodesktop -r "$command"
 echo "Ending $SLURM_JOB_ID at"
 date

@@ -1,0 +1,2 @@
+ restoredefaultpath;
+ rehash toolboxcache;
