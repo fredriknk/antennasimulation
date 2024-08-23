@@ -6,10 +6,10 @@
 #SBATCH --time=72:00:00
 #
 ####Partition
-#SBATCH --partition smallmem
+#SBATCH --partition hugemem-avx2
 ## Other parameters:
-#SBATCH --cpus-per-task 12 #Number of cpus the job will use
-#SBATCH --mem=16G #Memory RAM
+#SBATCH --cpus-per-task 24 #Number of cpus the job will use
+#SBATCH --mem=32G #Memory RAM
 #SBATCH --nodes 1
 #SBATCH -o logs/slurm-%x_%j.out    #Standar output message
 #SBATCH -e logs/slurm-%x_%j.err    #Standar error message
