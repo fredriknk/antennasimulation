@@ -1,4 +1,7 @@
 function optimizeAntennaMultiVars(varNames, varSettings, goal, optimizeMetric, targetImpedance, meshsize)
+    restoredefaultpath;
+    rehash toolboxcache;
+
     % Ensure all variable names and settings are in cell arrays, even for single entries
     if ~iscell(varNames) || ~iscell(varSettings)
         error('Variable names and settings must be provided in cell arrays.');
