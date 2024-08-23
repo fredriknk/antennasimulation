@@ -17,7 +17,7 @@
 
 ######Everything below this are the job instructions######
 echo "Pulling repo"
-git pull git@github.com:fredriknk/antennasimulation.git
+git pull
 echo "I am running on the NODE $SLURM_NODELIST"
 echo "I am running with $SLURM_CPUS_ON_NODE cpus"
 echo "Starting $SLURM_JOB_ID at"
