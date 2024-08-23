@@ -6,10 +6,11 @@
 #SBATCH --time=24:00:00
 #
 ####Partition
+##SBATCH -w cn-1
 #SBATCH --partition hugemem-avx2
 ## Other parameters:
-#SBATCH --cpus-per-task 24 #Number of cpus the job will use
-#SBATCH --mem=128G #Memory RAM
+#SBATCH --cpus-per-task 4 #Number of cpus the job will use
+#SBATCH --mem=12G #Memory RAM
 #SBATCH --nodes 1
 #SBATCH -o logs/slurm-%x_%j.out    #Standar output message
 #SBATCH -e logs/slurm-%x_%j.err    #Standar error message
@@ -26,6 +27,6 @@ module purge
 module load MATLAB/2023b
 echo "Module Loaded"
 echo "Starting Matlab"
-matlab -noFigureWindows -nosplash -nodesktop -r OPTIMIZEANTENNASCRIPT > logs/matlab-%x_%j.out
+matlab -noFigureWindows -nosplash -nodesktop -r moduletest > logs/matlab-%x_%j.out
 echo "Ending $SLURM_JOB_ID at"
 date
