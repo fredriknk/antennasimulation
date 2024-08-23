@@ -22,7 +22,7 @@ echo "I am running with $SLURM_CPUS_ON_NODE cpus"
 echo "Starting $SLURM_JOB_ID at"
 date
 
-command =$1
+command=$1
 echo "$command"
 
 echo "Loading modules"
