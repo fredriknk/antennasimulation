@@ -27,6 +27,6 @@ module purge
 module load MATLAB/2023b
 echo "Module Loaded"
 echo "Starting Matlab"
-matlab -noFigureWindows -nosplash -nodesktop -r OPTIMIZEANTENNASCRIPT
+matlab -noFigureWindows -nosplash -nodesktop -r OPTIMIZEANTENNASCRIPT > logs/slurm-%x_%j.out
 echo "Ending $SLURM_JOB_ID at"
 date
