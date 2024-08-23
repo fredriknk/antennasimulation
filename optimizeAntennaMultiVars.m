@@ -20,7 +20,7 @@ function optimizeAntennaMultiVars(varNames, varSettings, goal, optimizeMetric, t
 
     % Optimization options
     %options = optimoptions('fmincon', 'Display', 'iter', 'Algorithm', 'sqp');
-    options = optimoptions('fmincon', 'UseParallel', true, 'Display', 'iter', 'Algorithm', 'sqp');
+    options = optimoptions('fmincon', 'UseParallel', false, 'Display', 'iter', 'Algorithm', 'sqp');
     % Execute the optimization
     [optValues, optMetric] = fmincon(objectiveFunction, initialGuesses, [], [], [], [], lb, ub, [], options);
 
