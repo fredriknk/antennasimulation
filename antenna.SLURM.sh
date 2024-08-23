@@ -30,7 +30,7 @@ module purge
 module load MATLAB/2023b
 echo "Module Loaded"
 echo "Starting Matlab"
-timestamp=$(date +"%Y_%m_%d_%H_%M_%S")
+
 matlab -noFigureWindows -nosplash -nodesktop -r $command
 echo "Ending $SLURM_JOB_ID at"
 date
