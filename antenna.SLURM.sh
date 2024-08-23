@@ -23,7 +23,7 @@ echo "Starting $SLURM_JOB_ID at"
 date
 
 command =$1
-echo $command
+echo "$command"
 
 echo "Loading modules"
 module purge
@@ -31,6 +31,6 @@ module load MATLAB/2023b
 echo "Module Loaded"
 echo "Starting Matlab"
 
-matlab -noFigureWindows -nosplash -nodesktop -r $command
+matlab -noFigureWindows -nosplash -nodesktop -r "$command"
 echo "Ending $SLURM_JOB_ID at"
 date
