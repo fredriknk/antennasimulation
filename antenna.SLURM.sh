@@ -6,7 +6,8 @@
 #SBATCH --time=24:00:00
 #
 ####Partition
-#SBATCH --partition hugemem-avx2
+####SBATCH --partition hugemem-avx2
+#SBATCH -w cn-1
 ## Other parameters:
 #SBATCH --cpus-per-task 12 #Number of cpus the job will use
 #SBATCH --mem=16G #Memory RAM
