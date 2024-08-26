@@ -1,7 +1,4 @@
-function optimizeAntennaMultiVars(varNames, varSettings, goal, optimizeMetric, targetImpedance, meshsize)
-    restoredefaultpath;
-    rehash toolboxcache;
-
+function out=optimizeAntennaMultiVars(varNames, varSettings, goal, optimizeMetric, targetImpedance, meshsize)
     % Ensure all variable names and settings are in cell arrays, even for single entries
     if ~iscell(varNames) || ~iscell(varSettings)
         error('Variable names and settings must be provided in cell arrays.');
@@ -34,6 +31,7 @@ function optimizeAntennaMultiVars(varNames, varSettings, goal, optimizeMetric, t
         fprintf('%s = %f\n', optVarNames{i}, optValues(i));
     end
     fprintf('Optimal %s: %f\n', optimizeMetric, optMetric);
+    out=optValues
 end
 
 function metric = calculateMultiPerformanceMetric(x, optVarNames, varSettings, optimizeMetric, goal, targetImpedance, meshsize)
