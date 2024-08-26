@@ -1,6 +1,6 @@
-params={"L3","L6","D5","W3","W2","W1"};
-Ranges={[10e-3, 20.5e-3],[1e-3, 15e-3],[1e-3, 15e-3],[0.15e-3,1e-3],[0.15e-3,1e-3],[0.15e-3,1e-3]};
-meshsize = 1.2e-3; % Defined once, used for all optimizations
+params={"L3","L6","D5","W3","W2","W1"}
+Ranges={[10e-3, 20.5e-3],[1e-3, 15e-3],[1e-3, 15e-3],[0.15e-3,1e-3],[0.15e-3,1e-3],[0.15e-3,1e-3]}
+meshsize = 1.2e-3 % Defined once, used for all optimizations
 
 % Run the automated optimization
 results = automatedOptimization(params, Ranges, meshsize);
