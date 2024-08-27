@@ -14,7 +14,7 @@ function out=optimizeAntenna(varName, lb, ub, presets,presetvals, goal, optimize
     end
 
     % Optimization options
-    options = optimset('TolX', 1e-6, 'Display', 'iter');
+    options = optimset('TolX', 1e-5, 'Display', 'iter');
 
     % Run fminbnd to find the optimal value
     [optValue, optMetric] = fminbnd(objectiveFunction, lb, ub, options);
@@ -24,6 +24,7 @@ function out=optimizeAntenna(varName, lb, ub, presets,presetvals, goal, optimize
 end
 
 function metric = calculatePerformanceMetric(value, varName, presets, presetvals, optimizeMetric,meshsize);
+    tic
     % Set up the antenna object with the specified variable value
     antennaObject = IFA();
     antennaObject.(varName) = value;  % Dynamically set the property
@@ -54,6 +55,7 @@ function metric = calculatePerformanceMetric(value, varName, presets, presetvals
     fprintf('At %s = %f: Impedance = %f Ohm, S11 = %f dB\n', varName, value, abs(imp), s11);
 
     % Decide which metric to return based on the optimization target
+    toc
     if strcmp(optimizeMetric, 'impedance')
         metric = abs(imp);
     else

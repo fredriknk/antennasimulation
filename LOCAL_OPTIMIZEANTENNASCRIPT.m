@@ -32,8 +32,9 @@ function results = automatedOptimization(vars, ranges, meshsize)
         
         % Optimize the current variable
         %varName, range(1), range(2), presets, presetVals, "minimum", "s11", meshsize
+        tic
         optimizedValue = optimizeAntenna(varName, range(1), range(2), presets, presetVals, "minimum", "s11", meshsize);
-        
+        toc
         % Store the optimized value
         results.(varName) = optimizedValue;
         
