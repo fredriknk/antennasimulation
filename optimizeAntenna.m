@@ -14,7 +14,7 @@ function out=optimizeAntenna(varName, lb, ub, presets,presetvals, goal, optimize
     end
 
     % Optimization options
-    options = optimset('TolX', 1e-5, 'Display', 'iter');
+    options = optimset('TolX', 1e-6, 'Display', 'iter');
 
     % Run fminbnd to find the optimal value
     [optValue, optMetric] = fminbnd(objectiveFunction, lb, ub, options);
