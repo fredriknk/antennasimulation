@@ -12,10 +12,10 @@ classdef IFA
         W3 = 0.000472%0.000475%0.328e-3
         D4 = 0.5e-3  % board edge
         D5 = 0.001108%0.001070%1.534e-3
-        dThickness = 0.12e-3
-        d1Thickness = 1.2e-3
-        dEpsilonR = 4.6
-        d1EpsilonR = 4.6
+        dThickness = (0.18+0.18)*1e-3%0.12e-3
+        d1Thickness = (0.035+0.71)*1e-3%1.2e-3
+        dEpsilonR = 4.5
+        d1EpsilonR = 4.5
         Lgp = 20.0e-3 % Length of the Groundplane
         Wgp = 83.15e-3 % Width of the Groundplane
     end
